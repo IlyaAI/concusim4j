@@ -1,0 +1,4 @@
+rootProject.name = 'concusim4j'
+
+include 'concusim'
+include 'concusim-sample'

@@ -1,0 +1,46 @@
+subprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'java'
+
+    group = 'com.github.concusim'
+    version = '1.0'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    ext {
+        versions = [
+            slf4j: '1.7.12',
+            log4j: '1.2.17',
+            jbAnnotations: '15.0',
+
+            junit: '4.12',
+            hamcrest: '1.3'
+        ]
+    }
+
+    dependencies {
+        // logging
+        compile "org.slf4j:slf4j-api:${versions.slf4j}"
+
+        // @Nullable and @NotNull
+        compile "org.jetbrains:annotations:${versions.jbAnnotations}"
+
+        // testing
+        testCompile "junit:junit:${versions.junit}"
+        testCompile "org.hamcrest:hamcrest-all:${versions.hamcrest}"
+        testCompile "org.slf4j:slf4j-log4j12:${versions.slf4j}"
+        testCompile "log4j:log4j:${versions.log4j}"
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
+    }
+}

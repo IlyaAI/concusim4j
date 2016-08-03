@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+    }
+}
+
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+bintray {
+    user = System.getProperty('bintrayUser')
+    key = System.getProperty('bintrayApiKey')
+    pkg {
+        repo = 'maven'
+        name = project.name
+        desc = 'Concurrency Simulator Testing Tool for Java'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/IlyaAI/concusim4j.git'
+        labels = ['concusim4j', 'concurrency', 'test']
+    }
+    publications = ['bintray']
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        bintray (MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+            groupId project.group
+            artifactId project.name
+            version project.version
+        }
+    }
+}

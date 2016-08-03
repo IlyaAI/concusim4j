@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':concusim')
+    compile 'org.hibernate:hibernate-entitymanager:5.0.6.Final'
+    compile 'org.hsqldb:hsqldb:2.3.3'
+    compile 'javax.transaction:jta:1.1'
+}
