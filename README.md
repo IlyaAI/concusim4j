@@ -2,17 +2,17 @@
 
 ConcuSim is a \[very\] simple tool for simulate thread interleaving in test cases. 
 
-Latest release: 1.0.0
+Latest release: 1.0
 
 ## Getting Started
 
-You could find complete example [here](https://github.com/IlyaAI/concusim4j)
+You could find complete example [here](https://github.com/IlyaAI/concusim4j/tree/master/concusim-sample)
 
 #### Step 1. Add Maven or Gradle dependency
 
 ```groovy
 dependencies {
-    compile 'com.github.concusim:concusim4j:1.0.0'
+    compile 'com.github.concusim:concusim4j:1.0'
 }
 ```
 
