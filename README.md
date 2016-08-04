@@ -12,7 +12,7 @@ You could find complete example [here](https://github.com/IlyaAI/concusim4j/tree
 
 ```groovy
 dependencies {
-    compile 'com.github.concusim:concusim4j:1.0'
+    compile 'com.github.concusim:concusim:1.0'
 }
 ```
 
